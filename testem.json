@@ -1,0 +1,10 @@
+{
+  "framework": "jasmine2",
+  "before_tests": "grunt build:spec",
+  "launch_in_ci": ["PhantomJS"],
+  "src_files": [
+    "scripts/namespace.js",
+    ".tmp/scripts/dash-formatters/foo.js",
+    ".tmp/spec/**/*.js"
+  ]
+}
