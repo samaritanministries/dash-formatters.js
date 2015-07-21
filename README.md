@@ -1,6 +1,6 @@
 # Dash Formatters
 
-BUILD ICON
+[![Build Status](https://travis-ci.org/samaritanministries/dash-formatters.js.svg)](https://travis-ci.org/samaritanministries/dash-formatters.js)
 
 #### This is a collection of text formatters for the Dash platform.
 
