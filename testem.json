@@ -4,7 +4,8 @@
   "launch_in_ci": ["PhantomJS"],
   "src_files": [
     "scripts/namespace.js",
-    ".tmp/scripts/dash-formatters/foo.js",
+    "scripts/bower_components/moment/moment.js",
+    ".tmp/scripts/dash-formatters/date.js",
     ".tmp/spec/**/*.js"
   ]
 }

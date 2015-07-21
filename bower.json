@@ -1,7 +1,9 @@
 {
   "name": "dash-formatters.js",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "moment": null
+  },
   "devDependencies": {},
   "authors": ["smi <smi@8thlight.com>"],
   "description": "A collection of text formatters for the Dash platform.",
