@@ -6,7 +6,7 @@ class DashFormatters.Date
     @referenceDate = moment(@options.referenceDateAsString)
 
   format: (dateAsString) ->
-    date = moment(dateAsString)
+    date = @parseDate(dateAsString)
     if date.isValid()
       @formatDateWithDuration(date, @durationBetweenReferenceDate(dateAsString))
     else
@@ -38,3 +38,8 @@ class DashFormatters.Date
 
   durationBetweenReferenceDate: (dateAsString) ->
     moment.duration(@referenceDate.diff(dateAsString))
+
+  parseDate: (dateAsString) ->
+    middleDate = window.Date.parse(dateAsString)
+    date = moment(middleDate)
+    date.utcOffset(0)

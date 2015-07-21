@@ -1,11 +1,11 @@
 describe "Date", ->
 
-  describe "The date format", ->
+  format = (options) ->
+    new DashFormatters.Date(
+      referenceDateAsString: options.referenceDateAsString
+    ).format(options.dateAsString)
 
-    format = (options) ->
-      new DashFormatters.Date(
-        referenceDateAsString: options.referenceDateAsString
-      ).format(options.dateAsString)
+  describe "The date format with standard date input", ->
 
     it "returns the date for a date a few days in the past", ->
       formattedDate = format
@@ -88,3 +88,25 @@ describe "Date", ->
         dateAsString: "2016-04-25T13:30:35.050+00:00"
 
       expect(formattedDate).toEqual("2 hours ago")
+
+  describe "The date format with non-standard input", ->
+
+    it "is a full day ago", ->
+      formattedDate = format
+        referenceDateAsString: "2012-04-25"
+        dateAsString: "2012-04-24"
+
+      expect(formattedDate).toEqual("4/24/2012")
+
+    it "is 'just now' for a date in the future", ->
+      formattedDate = format
+        referenceDateAsString: "2016-04-25T15:30:35.050+00:00"
+        dateAsString: "2016-05-25T13:30:35.050+00:00"
+
+      expect(formattedDate).toEqual("Just now")
+
+    it "returns nothing for a bad date", ->
+      formattedDate = format
+        dateAsString: "foobar"
+
+      expect(formattedDate).toEqual("")
