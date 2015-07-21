@@ -49,8 +49,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'dist/dash-formatters.min.js': [
-            '.tmp/scripts/namespace.js',
-            '.tmp/scripts/dash-formatters/foo.js',
+            '.tmp/scripts/namespace.js'
           ]
         }
       }
