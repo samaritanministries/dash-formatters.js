@@ -3,10 +3,10 @@ namespace("DashFormatters")
 class DashFormatters.Date
 
   constructor: (@options={}) ->
-    @referenceDate = moment(@options.referenceDateAsString)
+    @referenceDate = moment(@options.referenceDate)
 
-  format: (dateAsString) ->
-    date = @parseDate(dateAsString)
+  format: (givenDate) ->
+    date = @parseDate(givenDate)
     if date.isValid()
       @formatDateWithDuration(date, @durationBetweenReferenceDate(date))
     else
