@@ -8,7 +8,7 @@ class DashFormatters.Date
   format: (dateAsString) ->
     date = @parseDate(dateAsString)
     if date.isValid()
-      @formatDateWithDuration(date, @durationBetweenReferenceDate(dateAsString))
+      @formatDateWithDuration(date, @durationBetweenReferenceDate(date))
     else
       ""
 
@@ -36,8 +36,8 @@ class DashFormatters.Date
       when 1 then "1 hour ago"
       else "#{numberOfHours} hours ago"
 
-  durationBetweenReferenceDate: (dateAsString) ->
-    moment.duration(@referenceDate.diff(dateAsString))
+  durationBetweenReferenceDate: (date) ->
+    moment.duration(@referenceDate.diff(date))
 
   parseDate: (dateAsString) ->
     middleDate = window.Date.parse(dateAsString)

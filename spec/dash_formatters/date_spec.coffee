@@ -105,6 +105,12 @@ describe "Date", ->
 
       expect(formattedDate).toEqual("Just now")
 
+    it "parses an ambiguous date", ->
+      formattedDate = format
+        dateAsString: "11/11/11"
+
+      expect(formattedDate).toEqual("11/11/2011")
+
     it "returns nothing for a bad date", ->
       formattedDate = format
         dateAsString: "foobar"
