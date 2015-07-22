@@ -24,6 +24,11 @@ Run ```testem```
 
 # Usage
 
+```coffee
+dateString = "2016-04-25T15:30:35.050+00:00"
+new DashFormatters.Date().format(dateString)
+```
+
 # License
 
 MIT License
