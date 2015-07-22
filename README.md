@@ -26,8 +26,7 @@ Run ```testem```
 
 ```coffee
 dateString = "2013-04-25T15:30:35.050+00:00"
-new DashFormatters.Date().format(dateString)
-# "4/25/2013"
+new DashFormatters.Date().format(dateString) # => "4/25/2013"
 ```
 
 # License
